@@ -74,9 +74,29 @@ catalog = {
     "Widget A": {"price": 9.99, "stock": 150},
     "Gadget C": {"price": 49.99, "stock": 8},
 }
-for name, details in catalog.items():
-    if details["stock"] < 20:
-        print(f"LOW STOCK: {name} - Only {details['stock']} left!")
+for product_name, product_details in catalog.items():
+    if product_details["stock"] < 20:
+        print(f"LOW STOCK: {product_name} - Only {product_details['stock']} left!")
+
+print("--- Exercise 8 ---")
+transactions = [ 
+    {"region": "South", "amount": 300},
+    {"region": "North", "amount": 150},
+    {"region": "South", "amount": 200}
+]
+
+sales_by_region = {}
+for sale in transactions:
+    region = sale["region"]
+    amount = sale["amount"]
+    sales_by_region[region] = sales_by_region.get(region, 0) + amount
+
+print(sales_by_region)
+
+for region in sorted(sales_by_region):
+    print(f"{region}: ${sales_by_region[region]:.2f}")
+
+
 
 # Reflection 1: When i would use .get() and when I would use bracket notation:
 #   
