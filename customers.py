@@ -1,5 +1,11 @@
 # Module 11 Lab: Customer Dictionary and Lookup
 
+# Reflection 1: When i would use .get() and when I would use bracket notation:
+# For a customer record, email is a good example of an optional field: some customers just won’t have one, so .get() with a readable default is the right choice. If email were required (say, for sending receipts), brackets would be better, since you’d want the error to surface right where the data is missing.
+#
+# Reflection 2: 
+# This pattern reminds me of an Excel PivotTable (or a SUMIF per region): it groups rows by region and totals the amount for each, giving South $500 and North $150. The Python version is more useful for large datasets because it isn’t limited by Excel’s row cap or slowdowns, and you can rerun the same code on new data instead of rebuilding and refreshing a PivotTable by hand.
+
 print("--- Exercise 1 ---")
 customer = {
     "name": "Alice",
@@ -96,12 +102,3 @@ print(sales_by_region)
 for region in sorted(sales_by_region):
     print(f"{region}: ${sales_by_region[region]:.2f}")
 
-
-
-# Reflection 1: When i would use .get() and when I would use bracket notation:
-#   
-#
-#
-#
-#
-# Reflection 2: 
